@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "./Store.jsx";
 import PokemonTypeList from "./PokemonTypeList.jsx";
 
 function PokedexCard(props) {
@@ -20,7 +21,8 @@ function PokedexCard(props) {
   );
 }
 export function Pokedex(props) {
-  const { pokedex } = props;
+  const [state, dispatch] = useContext(Context);
+  const { pokedex } = state;
   return (
     <div className="pokedex">
       {pokedex.map(pokemon => (

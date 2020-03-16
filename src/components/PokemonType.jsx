@@ -19,14 +19,14 @@ const typeIcons = {
 };
 
 export default function PokemonType(props) {
-  const { type } = props;
+  const { type, handleClick } = props;
   const typeName = type.toLowerCase();
   const icon = typeIcons[typeName];
   const iconClass = `fal fa-${icon}`;
   const typeClass = `pokemon-type text-is-color--${typeName}`;
 
   return (
-    <div className={typeClass}>
+    <div className={typeClass} onClick={() => handleClick(typeName)}>
       <i className={iconClass}></i>
     </div>
   );

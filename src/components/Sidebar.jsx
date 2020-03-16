@@ -1,19 +1,19 @@
 import React from "react";
 import POKEMON_TYPES from "../pokemon-types.js";
 import SidebarLogo from "./SidebarLogo.jsx";
-import PokemonTypeList from "./PokemonTypeList.jsx";
+import FilterList from "./FilterList.jsx";
+
 export function Sidebar() {
+  const handleFilterClick = type => console.log(type);
   return (
     <div className="sidebar">
       <SidebarLogo />
-      <div className="sidebar__filter-list">
-        <h2 className="text-is-color--black">Filter by type:</h2>
-        <PokemonTypeList types={POKEMON_TYPES} />
-      </div>
-      <div className="sidebar__filter-list">
-        <h2 className="text-is-color--black">Filter by weakness:</h2>
-        <PokemonTypeList types={POKEMON_TYPES} />
-      </div>
+      <FilterList
+        types={POKEMON_TYPES}
+        title="type"
+        handleFilterClick={handleFilterClick}
+      />
+      <FilterList types={POKEMON_TYPES} title="weakness" />
     </div>
   );
 }
