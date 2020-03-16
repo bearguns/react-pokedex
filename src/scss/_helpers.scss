@@ -1,0 +1,3 @@
+@function delay($base) {
+    @return $base * .1s;
+}

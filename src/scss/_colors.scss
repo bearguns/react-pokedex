@@ -1,0 +1,148 @@
+// brand colors
+$red: #e3350d;
+$black: #222224;
+$light-gray: #f0f0f0;
+$white: #ffffff;
+
+// pokemon type colors
+$bug: #88960e;
+$grass: #76c538;
+$dragon: #725bda;
+$electric: #fab917;
+$fighting: #79301a;
+$fire: #c72100;
+$flying: #93a5f2;
+$ghost: #5f5fb1;
+$ground: #cfae53;
+$ice: #6fd4f5;
+$normal: #c5c0b7;
+$poison: #974998;
+$psychic: #e9437b;
+$rock: #9f883e;
+$water: #3395f7;
+
+// background colors
+.background {
+    &--bug {
+	background-color: $bug;
+    }
+
+    &--dragon {
+	background-color: $dragon;
+    }
+
+    &--electric {
+	background-color: $electric;
+    }
+
+    &--fighting {
+	background-color: $fighting;
+    }
+
+    &--fire {
+	background-color: $fire;
+    }
+
+    &--flying {
+	background-color: $flying;
+    }
+
+    &--grass {
+	background-color: $grass;
+    }
+    &--ghost {
+	background-color: $ghost;
+    }
+
+    &--ground {
+	background-color: $ground;
+    }
+
+    &--ice {
+	background-color: $ice;
+    }
+
+    &--normal {
+	background-color: $normal;
+    }
+
+    &--poison {
+	background-color: $poison;
+    }
+
+    &--psychic {
+	background-color: $psychic;
+    }
+
+    &--rock {
+	background-color: $rock;
+    }
+
+    &--water {
+	background-color: $water;
+    }
+}
+
+.text-is-color {
+    &--black {
+	color: $black;
+    }
+     &--bug {
+	color: $bug;
+    }
+
+    &--dragon {
+	color: $dragon;
+    }
+
+    &--electric {
+	color: $electric;
+    }
+
+    &--fighting {
+	color: $fighting;
+    }
+
+    &--fire {
+	color: $fire;
+    }
+
+    &--flying {
+	color: $flying;
+    }
+
+    &--grass {
+	color: $grass;
+    }
+    &--ghost {
+	color: $ghost;
+    }
+
+    &--ground {
+	color: $ground;
+    }
+
+    &--ice {
+	color: $ice;
+    }
+
+    &--normal {
+	color: $normal;
+    }
+
+    &--poison {
+	color: $poison;
+    }
+
+    &--psychic {
+	color: $psychic;
+    }
+
+    &--rock {
+	color: $rock;
+    }
+
+    &--water {
+	color: $water;
+    }   
+}

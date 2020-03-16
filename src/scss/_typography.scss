@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap');
+
+$font-family-heading: 'Baloo 2', sans-serif;
+$font-family-text: 'Baloo 2', sans-serif;
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    margin: 4px;
+}
+
+h1, h3, h5 {
+    font-weight: $font-weight-medium;
+}
+
+h2, h4, h6 {
+    font-weight: $font-weight-bold;
+}
+
+a, p, span, li {
+    font-family: $font-family-text;
+    font-weight: $font-weight-regular;
+}

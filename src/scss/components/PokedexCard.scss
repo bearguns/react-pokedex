@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../colors";
+.pokedex-card {
+    opacity: 0;
+    width: 400px;
+    height: 180px;
+    border: 2px solid $light-gray;
+    border-top: 16px solid $red;
+    border-radius: 27px;
+    color: $black;
+    animation-name: Fade-in;
+    animation-duration: .15s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &__types {
+	display: flex;
+	justify-content: space-between;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+	width: 100%;
+    }
+}
+
+@for $i from 1 through 151 {
+    .pokedex-card:nth-child(#{$i}n) {
+	animation-delay: delay($i);
+    }
+}

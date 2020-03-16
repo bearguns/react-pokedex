@@ -1,0 +1,43 @@
+.sidebar {
+    padding: 27px 15px;
+    height: 100vh;
+    width: 300px;
+    background: $red;
+    animation: .25s ease 0s 1 Slide-in-from-left;
+    animation-fill-mode: forwards;
+    color: $light-gray;
+    grid-column: span -1;
+    @media screen and (max-width: $breakpoint-mobile) {
+	padding: 13px 7px;
+	height: 128px;
+	width: 100%;
+	grid-row: span -1;
+    }
+
+    &__filter-list {
+	margin-bottom: 15px;
+	background-color: $light-gray;
+	border-radius: 28px;
+	padding: 15px 27px;
+    }
+}
+
+.sidebar-logo {
+    animation: 1.25s linear 0s 1 Fade-in;
+    animation-fill-mode: forwards;
+    display: flex;
+    i {
+	font-size: 3rem;
+	animation: 8s linear 0s infinite App-logo-spin;
+
+	@media screen and (max-width: $breakpoint-mobile) {
+	    font-size: 2rem;
+	}
+    }
+}
+
+.sidebar-title {
+    h6 {
+	margin-bottom: -8px;
+    }
+}
