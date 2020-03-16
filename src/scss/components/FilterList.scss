@@ -3,4 +3,6 @@
     background-color: $light-gray;
     border-radius: 28px;
     padding: 15px 27px;
+    animation: 1.5s linear 0s 1 Fade-in;
+    animation-fill-mode: forwards;
 }
