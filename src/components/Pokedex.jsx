@@ -20,8 +20,9 @@ function PokedexCard(props) {
     </div>
   );
 }
+
 export function Pokedex(props) {
-  const [state, dispatch] = useContext(Context);
+  const [state] = useContext(Context);
   const { pokedex } = state;
   return (
     <div className="pokedex">
