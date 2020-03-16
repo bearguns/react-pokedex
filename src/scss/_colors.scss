@@ -84,6 +84,9 @@ $water: #3395f7;
 }
 
 .text-is-color {
+    &--white {
+	color: $white;
+    }
     &--black {
 	color: $black;
     }

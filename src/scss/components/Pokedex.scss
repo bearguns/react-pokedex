@@ -2,6 +2,7 @@
     padding: 27px;
     display: grid;
     grid-template-columns: repeat(3,auto);
+    grid-auto-rows: 200px;
     overflow: auto;
     grid-gap: 27px;
     @media screen and (max-width: 814px) {

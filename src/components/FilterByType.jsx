@@ -5,6 +5,13 @@ import FilterList from "./FilterList.jsx";
 export default function FilterByType() {
   const [state, dispatch] = useContext(Context);
   const { typeFilters } = state;
+
+  const updateFilters = type => {
+    if (typeFilters && typeFilters.length === 1 && typeFilters[0] === type)
+      return clearTypeFilters();
+
+    return pushTypeFilter(type);
+  };
   const pushTypeFilter = type => {
     if (!typeFilters) {
       return dispatch({
@@ -32,7 +39,8 @@ export default function FilterByType() {
   return (
     <FilterList
       title={"type"}
-      handleFilterClick={pushTypeFilter}
+      handleFilterClick={updateFilters}
+      filters={typeFilters}
       clearFilters={clearTypeFilters}
     />
   );

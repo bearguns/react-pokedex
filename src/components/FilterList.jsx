@@ -1,14 +1,24 @@
 import React from "react";
 import POKEMON_TYPES from "../pokemon-types.js";
-import PokemonTypeList from "./PokemonTypeList.jsx";
+import PokemonType from "./PokemonType.jsx";
 
 export default function FilterList(props) {
-  const { title, handleFilterClick, clearFilters } = props;
+  const { title, handleFilterClick, clearFilters, filters } = props;
 
   return (
     <div className="filter-list">
       <h2 className="text-is-color--black">Filter by {title}:</h2>
-      <PokemonTypeList types={POKEMON_TYPES} handleClick={handleFilterClick} />
+      {POKEMON_TYPES.map(type => (
+        <div
+          className={
+            filters && !filters.includes(type)
+              ? "filter-list__icon filter-list__icon--inactive"
+              : "filter-list__icon"
+          }
+        >
+          <PokemonType type={type} handleClick={handleFilterClick} />
+        </div>
+      ))}
       <button onClick={() => clearFilters()}>
         <i className="fal fa-close"></i>
         Clear All

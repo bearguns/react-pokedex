@@ -2,17 +2,27 @@
 @import "../colors";
 .pokedex-card {
     opacity: 0;
-    width: 400px;
+    width: 300px;
     height: 180px;
     border: 2px solid $light-gray;
-    border-top: 16px solid $red;
-    border-radius: 27px;
+    border-radius: 28px;
+    border-top-width: 0px;
     color: $black;
-    animation-name: Fade-in;
-    animation-duration: .5s;
-    animation-iteration-count: 1;
+    animation: 1s ease .5s 1 Fade-in;
     animation-fill-mode: forwards;
 
+    &__banner {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 8px;
+	border-top-left-radius: 27px;
+	border-top-right-radius: 27px;
+	height: 42px;
+	position: relative;
+	top: -3px;
+	width: 100%;
+	background-color: $red;
+    }
     &__types {
 	display: flex;
 	justify-content: space-between;

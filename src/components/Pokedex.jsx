@@ -6,7 +6,11 @@ function PokedexCard(props) {
   const { pokemon } = props;
   return (
     <div className="pokedex-card">
-      <h1>{pokemon.name}</h1>
+      <div className="pokedex-card__banner text-is-color--white">
+        <h1>#{pokemon.num}</h1>
+        <h1>{pokemon.name}</h1>
+      </div>
+
       <div className="pokedex-card__types">
         <div>
           <h3>Type(s):</h3>
