@@ -6,10 +6,16 @@ export default function FilterByType() {
   const [state, dispatch] = useContext(Context);
   const { weaknessFilters } = state;
   const pushWeaknessFilter = type => {
+    if (!weaknessFilters) {
+      return dispatch({
+        type: "SET_WEAKNESS_FILTERS",
+        payload: [type]
+      });
+    }
     if (weaknessFilters.includes(type)) {
       return dispatch({
         type: "SET_WEAKNESS_FILTERS",
-        payload: [...weaknessFilters.filter(t => t != type)]
+        payload: [...weaknessFilters.filter(t => t !== type)]
       });
     }
     return dispatch({
@@ -21,7 +27,7 @@ export default function FilterByType() {
   const clearWeaknessFilters = () =>
     dispatch({
       type: "SET_WEAKNESS_FILTERS",
-      payload: []
+      payload: null
     });
   return (
     <FilterList

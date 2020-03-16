@@ -1,7 +1,7 @@
 .pokedex {
     padding: 27px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,auto);
     overflow: auto;
     grid-gap: 27px;
     @media screen and (max-width: 814px) {

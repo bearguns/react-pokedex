@@ -9,7 +9,7 @@
     border-radius: 27px;
     color: $black;
     animation-name: Fade-in;
-    animation-duration: .15s;
+    animation-duration: .5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
@@ -23,8 +23,3 @@
     }
 }
 
-@for $i from 1 through 151 {
-    .pokedex-card:nth-child(#{$i}n) {
-	animation-delay: delay($i);
-    }
-}

@@ -1,19 +1,19 @@
 const POKEMON_TYPES = [
-  "bug",
-  "dragon",
-  "electric",
-  "fighting",
-  "fire",
-  "flying",
-  "grass",
-  "ghost",
-  "ground",
-  "ice",
-  "normal",
-  "poison",
-  "psychic",
-  "rock",
-  "water"
+  "Bug",
+  "Dragon",
+  "Electric",
+  "Fighting",
+  "Fire",
+  "Flying",
+  "Grass",
+  "Ghost",
+  "Ground",
+  "Ice",
+  "Normal",
+  "Poison",
+  "Psychic",
+  "Rock",
+  "Water"
 ];
 
 export default POKEMON_TYPES;

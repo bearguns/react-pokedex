@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "./Store.jsx";
 import PokemonTypeList from "./PokemonTypeList.jsx";
 
@@ -22,13 +22,41 @@ function PokedexCard(props) {
 }
 
 export function Pokedex(props) {
-  const [state] = useContext(Context);
-  const { pokedex } = state;
+  const [state, dispatch] = useContext(Context);
+  const { pokedex, typeFilters, weaknessFilters, filteredPokedex } = state;
+
+  useEffect(() => {
+    if (!typeFilters && !weaknessFilters) {
+      return dispatch({
+        type: "SET_FILTERED_POKEDEX",
+        payload: null
+      });
+    }
+
+    return dispatch({
+      type: "SET_FILTERED_POKEDEX",
+      payload: [
+        ...pokedex.filter(pokemon => {
+          return (
+            (!typeFilters ||
+              typeFilters.every(type => pokemon.type.includes(type))) &&
+            (!weaknessFilters ||
+              weaknessFilters.every(type => pokemon.weaknesses.includes(type)))
+          );
+        })
+      ]
+    });
+  }, [typeFilters, weaknessFilters, pokedex, dispatch]);
+
   return (
     <div className="pokedex">
-      {pokedex.map(pokemon => (
-        <PokedexCard pokemon={pokemon} key={pokemon.id} />
-      ))}
+      {filteredPokedex
+        ? filteredPokedex.map(pokemon => (
+            <PokedexCard pokemon={pokemon} key={pokemon.id} />
+          ))
+        : pokedex.map(pokemon => (
+            <PokedexCard pokemon={pokemon} key={pokemon.id} />
+          ))}
     </div>
   );
 }

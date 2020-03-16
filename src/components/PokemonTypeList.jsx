@@ -1,6 +1,5 @@
 import React from "react";
 import PokemonType from "./PokemonType.jsx";
-
 export default function PokemonTypeList(props) {
   const { types, handleClick } = props;
   return (

@@ -20,13 +20,14 @@ const reducer = (state, action) => {
     case "CLEAR_FILTERS":
       return {
         ...state,
-        typeFilters: [],
-        weaknessFilters: []
+        typeFilters: null,
+        weaknessFilters: null,
+        filteredPokedex: null
       };
     case "SET_FILTERED_POKEDEX":
       return {
         ...state,
-        pokedex: [...action.payload]
+        filteredPokedex: action.payload
       };
     default:
       return state;
@@ -35,9 +36,9 @@ const reducer = (state, action) => {
 
 const initialState = {
   pokedex: [],
-  typeFilters: [],
-  weaknessFilters: [],
-  filteredPokedex: []
+  typeFilters: null,
+  weaknessFilters: null,
+  filteredPokedex: null
 };
 
 export const Context = createContext(initialState);
