@@ -22,7 +22,11 @@
     }
     &__types {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+
+	& .pokemon-type-list .pokemon-type i {
+	    font-size: 1.75rem;
+	}
     }
 
     @media screen and (max-width: $breakpoint-mobile) {
