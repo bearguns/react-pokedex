@@ -2,32 +2,48 @@ import React, { createContext, useReducer, useEffect } from "react";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SET_POKEDEX":
+    case "SET_MASTER_POKEDEX":
       return {
         ...state,
-        pokedex: [...action.payload]
+        masterPokedex: [...action.payload]
+      };
+    case "SET_ACTIVE_POKEDEX":
+      return {
+        ...state,
+        activePokedex: action.payload
       };
     case "SET_TYPE_FILTERS":
       return {
         ...state,
-        typeFilters: action.payload
+        filters: {
+          ...state.filters,
+          types: action.payload
+        }
       };
     case "SET_WEAKNESS_FILTERS":
       return {
         ...state,
-        weaknessFilters: action.payload
+        filters: {
+          ...state.filters,
+          weaknesses: action.payload
+        }
+      };
+    case "SET_NAME_FILTER":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          name: action.payload
+        }
       };
     case "CLEAR_FILTERS":
       return {
         ...state,
-        typeFilters: null,
-        weaknessFilters: null,
-        filteredPokedex: null
-      };
-    case "SET_FILTERED_POKEDEX":
-      return {
-        ...state,
-        filteredPokedex: action.payload
+        filters: {
+          name: "",
+          types: null,
+          weaknesses: null
+        }
       };
     default:
       return state;
@@ -35,16 +51,20 @@ const reducer = (state, action) => {
 };
 
 const initialState = {
-  pokedex: [],
-  typeFilters: null,
-  weaknessFilters: null,
-  filteredPokedex: null
+  masterPokedex: [],
+  activePokedex: [],
+  filters: {
+    name: "",
+    types: null,
+    weaknesses: null
+  }
 };
 
 export const Context = createContext(initialState);
 
 const Store = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { masterPokedex } = state;
   useEffect(() => {
     async function fetchPokedex() {
       const response = await fetch(
@@ -52,10 +72,14 @@ const Store = ({ children }) => {
       );
       const pokemonList = await response.json();
       const { pokemon } = pokemonList;
-      dispatch({ type: "SET_POKEDEX", payload: [...pokemon] });
+      dispatch({ type: "SET_MASTER_POKEDEX", payload: [...pokemon] });
     }
     fetchPokedex();
-  }, []);
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch({ type: "SET_ACTIVE_POKEDEX", payload: [...masterPokedex] });
+  }, [masterPokedex]);
 
   return (
     <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>

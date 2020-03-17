@@ -4,34 +4,32 @@ import FilterList from "./FilterList.jsx";
 
 export default function FilterByWeakness() {
   const [state, dispatch] = useContext(Context);
-  const { weaknessFilters } = state;
+  const {
+    filters: { weaknesses }
+  } = state;
   const updateFilters = type => {
-    if (
-      weaknessFilters &&
-      weaknessFilters.length === 1 &&
-      weaknessFilters[0] === type
-    ) {
+    if (weaknesses && weaknesses.length === 1 && weaknesses[0] === type) {
       return clearWeaknessFilters();
     }
     return pushWeaknessFilter(type);
   };
   const pushWeaknessFilter = type => {
-    if (!weaknessFilters) {
+    if (!weaknesses) {
       return dispatch({
         type: "SET_WEAKNESS_FILTERS",
         payload: [type]
       });
     }
-    if (weaknessFilters.includes(type)) {
+    if (weaknesses.includes(type)) {
       return dispatch({
         type: "SET_WEAKNESS_FILTERS",
-        payload: [...weaknessFilters.filter(t => t !== type)]
+        payload: [...weaknesses.filter(t => t !== type)]
       });
     }
 
     return dispatch({
       type: "SET_WEAKNESS_FILTERS",
-      payload: [...weaknessFilters, type]
+      payload: [...weaknesses, type]
     });
   };
 
@@ -45,7 +43,7 @@ export default function FilterByWeakness() {
       title={"weakness"}
       handleFilterClick={updateFilters}
       clearFilters={clearWeaknessFilters}
-      filters={weaknessFilters}
+      filters={weaknesses}
     />
   );
 }

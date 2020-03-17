@@ -15,6 +15,7 @@ export default function FilterList(props) {
               ? "filter-list__icon filter-list__icon--inactive"
               : "filter-list__icon"
           }
+          key={type}
         >
           <PokemonType type={type} handleClick={handleFilterClick} />
         </div>

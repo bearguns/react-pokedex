@@ -5,7 +5,11 @@ export default function PokemonTypeList(props) {
   return (
     <div className="pokemon-type-list">
       {types.map(type => (
-        <PokemonType type={type} handleClick={handleClick}></PokemonType>
+        <PokemonType
+          type={type}
+          handleClick={handleClick}
+          key={type}
+        ></PokemonType>
       ))}
     </div>
   );

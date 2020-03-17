@@ -4,30 +4,35 @@ import FilterList from "./FilterList.jsx";
 
 export default function FilterByType() {
   const [state, dispatch] = useContext(Context);
-  const { typeFilters } = state;
+  const { filters } = state;
 
   const updateFilters = type => {
-    if (typeFilters && typeFilters.length === 1 && typeFilters[0] === type)
+    if (
+      filters.types &&
+      filters.types.length === 1 &&
+      filters.types[0] === type
+    )
       return clearTypeFilters();
 
     return pushTypeFilter(type);
   };
+
   const pushTypeFilter = type => {
-    if (!typeFilters) {
+    if (!filters.types) {
       return dispatch({
         type: "SET_TYPE_FILTERS",
         payload: [type]
       });
     }
-    if (typeFilters.includes(type)) {
+    if (filters.types.includes(type)) {
       return dispatch({
         type: "SET_TYPE_FILTERS",
-        payload: [...typeFilters.filter(t => t !== type)]
+        payload: [...filters.types.filter(t => t !== type)]
       });
     }
     return dispatch({
       type: "SET_TYPE_FILTERS",
-      payload: [...typeFilters, type]
+      payload: [...filters.types, type]
     });
   };
 
@@ -40,7 +45,7 @@ export default function FilterByType() {
     <FilterList
       title={"type"}
       handleFilterClick={updateFilters}
-      filters={typeFilters}
+      filters={filters.types}
       clearFilters={clearTypeFilters}
     />
   );

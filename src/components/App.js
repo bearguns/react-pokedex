@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Store from "./Store.jsx";
 import { Pokedex } from "./Pokedex.jsx";
 import { Sidebar } from "./Sidebar.jsx";
