@@ -9,8 +9,11 @@
 
     &__icon {
 	transition: opacity .5s;
+	&:hover {
+	    opacity: 1;
+	}
     }
-    
+
     &__icon--inactive {
 	opacity: .25;
     }

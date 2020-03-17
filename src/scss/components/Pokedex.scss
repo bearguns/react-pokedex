@@ -5,6 +5,10 @@
     grid-auto-rows: 200px;
     overflow: auto;
     grid-gap: 27px;
+    opacity: 0;
+
+    animation: .5s ease .5s 1 Fade-in;
+    animation-fill-mode: forwards;
     @media screen and (max-width: 814px) {
 	grid-template-columns: 1fr;
     }

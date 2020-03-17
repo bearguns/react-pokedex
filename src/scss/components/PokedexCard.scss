@@ -1,15 +1,12 @@
 @import "../variables";
 @import "../colors";
 .pokedex-card {
-    opacity: 0;
     width: 300px;
     height: 180px;
     border: 2px solid $light-gray;
     border-radius: 28px;
     border-top-width: 0px;
     color: $black;
-    animation: 1s ease .5s 1 Fade-in;
-    animation-fill-mode: forwards;
 
     &__banner {
 	display: flex;
