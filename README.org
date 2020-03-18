@@ -1,0 +1,33 @@
+#+TITLE: The React Pokedex
+#+AUTHOR: Sean Brage
+
+* Overview
+The React Pokedex is a simple ReactJS application built over the
+course of 4 work days as a coding challenge. The application makes use
+of the latest React features, including Context and Hooks.
+
+You can view the app running in production [[https://react-pokedex-mtqs39gc7.now.sh/][by clicking here.]]
+
+** Running the app locally
+If you want to poke around and experiment with the app, the steps
+below will get you up and running:
+
+*** Requirements
+- Node v12 or above
+- Yarn ~npm i -g yarn~
+
+- Clone this repo to your local machine: ~$ git clone
+  git@github.com:bearguns/react-pokedex.git~
+- ~$ cd react-pokedex~
+- Install dependencies: ~$ yarn install~
+- Start the development server: ~$ yarn start~
+
+** Technology in use
+- ReactJS
+  - Hooks
+  - Context
+- React Router Dom
+- Yarn
+- SCSS
+- Fuse.js (wicked fast search library)
+- Zeit Now.sh for hosting
