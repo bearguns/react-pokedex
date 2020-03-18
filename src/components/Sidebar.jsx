@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import SidebarLogo from "./SidebarLogo.jsx";
 import FilterByType from "./FilterByType.jsx";
 import FilterByWeakness from "./FilterByWeakness.jsx";

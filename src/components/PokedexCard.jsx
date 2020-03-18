@@ -12,7 +12,7 @@ export default function PokedexCard(props) {
           <h3>{pokemon.name}</h3>
         </div>
 
-        <div class="pokedex-card__content">
+        <div className="pokedex-card__content">
           <div className="pokedex-card__types">
             <div>
               <h5>Type:</h5>

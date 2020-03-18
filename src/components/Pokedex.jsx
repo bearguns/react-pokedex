@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "./Store.jsx";
-import PokemonTypeList from "./PokemonTypeList.jsx";
 import PokedexCard from "./PokedexCard.jsx";
 
 export function Pokedex(props) {
