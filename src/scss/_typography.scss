@@ -55,9 +55,14 @@ h6 {
     font-size: $font-size-6;
     line-height: $font-size-6;
 }
+
 a, p, span, li {
     font-family: $font-family-text;
     font-weight: $font-weight-regular;
+}
+
+a {
+    text-decoration: none;
 }
 
 .text-is-size {

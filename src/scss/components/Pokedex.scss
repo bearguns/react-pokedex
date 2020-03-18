@@ -3,9 +3,9 @@
     padding-bottom: 54px;
     display: grid;
     grid-template-columns: repeat(3,auto);
-    grid-auto-rows: 200px;
+    grid-auto-rows: auto;
     overflow: auto;
-    grid-gap: 54px;
+    grid-gap: 27px;
     margin-bottom: 27px;
     opacity: 0;
 

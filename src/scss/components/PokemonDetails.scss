@@ -1,0 +1,55 @@
+.pokemon-details {
+    &__page {
+	padding: 27px;
+	width: 100%;
+
+	@media screen and (max-width: $breakpoint-mobile) {
+	    padding: 12px;
+	}
+    }
+    
+    &__content {
+	background-color: white;
+	border-radius: 3px;
+	min-height: 200px;
+	max-width: 600px;
+    }
+
+    &__details {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 27px;
+
+	@media screen and (max-width: $breakpoint-mobile) {
+	    padding: 12px;
+	    flex-direction: column-reverse;
+	    align-items: center;
+	}
+    }
+
+    &__info {
+	padding: 15px;
+	border-radius: 8px;
+	background-color: $light-gray;
+	p {
+	    padding-left: 8px;
+	}
+    }
+    
+    &__nav {
+	color: $red;
+	font-size: $font-size-3;
+    }
+
+    &__banner {
+	position: relative;
+	height: 64px;
+	padding: 12px;
+	background-color: $red;
+	color: $light-gray;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+    }
+}
