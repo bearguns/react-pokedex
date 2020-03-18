@@ -1,12 +1,14 @@
 .filter-list {
     opacity: 0;
+    margin-top: 15px;
     margin-bottom: 15px;
-    background-color: $light-gray;
-    border-radius: 28px;
-    padding: 15px 27px;
     animation: 1s ease .5s 1 Fade-in;
     animation-fill-mode: forwards;
 
+    &__types {
+	display: flex;
+	flex-wrap: wrap;
+    }
     &__icon {
 	transition: opacity .5s;
 	&:hover {

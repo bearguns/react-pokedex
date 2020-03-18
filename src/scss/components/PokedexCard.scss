@@ -3,7 +3,8 @@
 .pokedex-card {
     width: 300px;
     height: 200px;
-    border: 2px solid $light-gray;
+    background-color: $white;
+    border: 1px solid $light-gray;
     border-radius: 3px;
     border-top-width: 0px;
     color: $black;
@@ -19,7 +20,7 @@
 	position: relative;
 	top: -3px;
 	width: 100%;
-	background-color: $black;
+	background-color: $red;
     }
     &__types {
 	display: flex;

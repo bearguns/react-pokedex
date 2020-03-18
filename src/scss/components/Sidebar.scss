@@ -2,7 +2,7 @@
     padding: 27px 15px;
     height: 100vh;
     width: 300px;
-    background: $red;
+    background: $white;
     animation: .25s ease 0s 1 Slide-in-from-left;
     animation-fill-mode: forwards;
     color: $light-gray;
@@ -19,6 +19,7 @@
     animation: 1.25s linear 0s 1 Fade-in;
     animation-fill-mode: forwards;
     display: flex;
+    color: $red;
     i {
 	font-size: 3rem;
 	animation: 8s linear 0s infinite App-logo-spin;
