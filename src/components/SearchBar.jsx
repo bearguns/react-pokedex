@@ -37,5 +37,15 @@ export default function SearchBar() {
     }
   };
 
-  return <input type="text" name="query" onChange={updateSearchTerm} />;
+  return (
+    <div className="search-bar">
+      <input
+        type="text"
+        name="query"
+        onChange={updateSearchTerm}
+        placeholder="search by pokemon name"
+      />
+      ;
+    </div>
+  );
 }

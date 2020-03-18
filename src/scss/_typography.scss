@@ -5,6 +5,13 @@ $font-family-text: 'Baloo 2', sans-serif;
 $font-weight-bold: 700;
 $font-weight-medium: 500;
 $font-weight-regular: 400;
+$font-size-1: 2.25rem;
+$font-size-2: 2rem;
+$font-size-3: 1.75rem;
+$font-size-4: 1.5rem;
+$font-size-5: 1.25rem;
+$font-size-6: 1rem;
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-heading;
@@ -20,35 +27,61 @@ h2, h4, h6 {
 }
 
 h1 {
-    font-size: 2.25rem;
-    line-height: 2.25rem;
+    font-size: $font-size-1;
+    line-height: $font-size-1;
 }
 
 h2 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: $font-size-2;
+    line-height: $font-size-2;
 }
 
 h3 {
-    font-size: 1.75rem;
-    line-height: 1.75rem;
+    font-size: $font-size-3;
+    line-height: $font-size-3;
 }
 
 h4 {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: $font-size-4;
+    line-height: $font-size-4;
 }
 
 h5 {
-    font-size: 1.25rem;
-    line-height: 1.25rem;
+    font-size: $font-size-5;
+    line-height: $font-size-5;
 }
 
 h6 {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: $font-size-6;
+    line-height: $font-size-6;
 }
 a, p, span, li {
     font-family: $font-family-text;
     font-weight: $font-weight-regular;
+}
+
+.text-is-size {
+    &--1 {
+	font-size: $font-size-1 !important;
+    }
+
+    &--2 {
+	font-size: $font-size-2 !important;
+    }
+
+    &--3 {
+	font-size: $font-size-3 !important;
+    }
+
+    &--4 {
+	font-size: $font-size-4 !important;
+    }
+
+    &--5 {
+	font-size: $font-size-5 !important;
+    }
+
+    &--6 {
+	font-size: $font-size-6;
+    }
 }

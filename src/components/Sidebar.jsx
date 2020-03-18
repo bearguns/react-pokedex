@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import SidebarLogo from "./SidebarLogo.jsx";
 import FilterByType from "./FilterByType.jsx";
 import FilterByWeakness from "./FilterByWeakness.jsx";
 import SearchBar from "./SearchBar.jsx";
 
 export function Sidebar() {
+  const [showFilters, setShowFilters] = useState(false);
+  const toggleFilters = () => setShowFilters(!showFilters);
+
+  const filtersClassName = showFilters
+    ? "sidebar__filters sidebar__filters--active"
+    : "sidebar__filters";
+
   return (
     <div className="sidebar">
-      <SidebarLogo />
+      <SidebarLogo handleFilterClick={toggleFilters} />
       <SearchBar />
-      <FilterByType />
-      <FilterByWeakness />
+      <div className={filtersClassName}>
+        <FilterByType />
+        <FilterByWeakness />
+        <button
+          className="sidebar__close-filters"
+          onClick={() => toggleFilters()}
+        >
+          View results
+        </button>
+      </div>
     </div>
   );
 }

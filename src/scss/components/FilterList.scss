@@ -5,12 +5,24 @@
     animation: 1s ease .5s 1 Fade-in;
     animation-fill-mode: forwards;
 
+    &__title {
+	@media screen and (max-width: $breakpoint-mobile) {
+	    font-size: $font-size-5;
+	}
+    }
     &__types {
 	display: flex;
 	flex-wrap: wrap;
     }
+    
     &__icon {
 	transition: opacity .5s;
+
+	@media screen and (max-width: $breakpoint-mobile) {
+	    i {
+		font-size: $font-size-4;
+	    }
+	}
 	&:hover {
 	    opacity: 1;
 	}

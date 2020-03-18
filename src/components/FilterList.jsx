@@ -7,7 +7,9 @@ export default function FilterList(props) {
 
   return (
     <div className="filter-list">
-      <h2 className="text-is-color--black">Filter by {title}:</h2>
+      <h2 className="text-is-color--black filter-list__title">
+        Filter by {title}:
+      </h2>
       <div className="filter-list__types">
         {POKEMON_TYPES.map(type => (
           <div

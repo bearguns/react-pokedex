@@ -1,0 +1,22 @@
+@import "../colors";
+@import "../variables";
+
+.filter-button {
+    @media screen and (min-width: $breakpoint-mobile) {
+	display: none;
+    }
+    border: 1px solid $light-gray;
+    width: 54px;
+    height: 54px;
+    background: $white;
+
+    &--active {
+	background-color: $light-gray;
+	border-color: $red
+    }
+    
+    i {
+	font-size: 1.5rem;
+	color: $red;
+    }
+}

@@ -7,27 +7,69 @@
     animation-fill-mode: forwards;
     color: $light-gray;
     grid-column: span -1;
+    
     @media screen and (max-width: $breakpoint-mobile) {
-	padding: 13px 7px;
+	position: relative;
+	z-index: 1;
 	height: 128px;
 	width: 100%;
 	grid-row: span -1;
+	padding: 15px 0px;
+    }
+
+    &__close-filters {
+	display: none;
+	margin: 0 auto;
+	width: 264px;
+	background: $red;
+	border: none;
+	border-radius: 24px;
+	color: $light-gray;
+	font-size: $font-size-4;
+	height: 2.2rem;
+	@media screen and (max-width: $breakpoint-mobile) {
+	    display: inherit;
+	}
+    }
+    &__filters {
+	background-color: $white;
+	width: 100%;
+	@media screen and (max-width: $breakpoint-mobile) {
+	    height: 0px;
+	    z-index: 2;
+	    margin-bottom: 27px;
+	    overflow-y: hidden;
+	    transition: height .25s ease-in-out;
+	    &--active {
+		height: 400px;
+		position: relative;
+		border-bottom: 2px solid $red;
+		z-index: 9;
+		display: inherit;
+		padding: 8px;
+	    }
+	}
     }
 }
 
 .sidebar-logo {
+    padding: 0px 15px;
     animation: 1.25s linear 0s 1 Fade-in;
     animation-fill-mode: forwards;
     display: flex;
     color: $red;
-    i {
-	font-size: 3rem;
-	animation: 8s linear 0s infinite App-logo-spin;
 
-	@media screen and (max-width: $breakpoint-mobile) {
-	    font-size: 2rem;
+    &__icon {
+	i {
+	    font-size: 3rem;
+	    animation: 8s linear 0s infinite App-logo-spin;
+
+	    @media screen and (max-width: $breakpoint-mobile) {
+		font-size: 2rem;
+	    }
 	}
     }
+
 }
 
 .sidebar-title {
@@ -35,3 +77,4 @@
 	margin-bottom: -8px;
     }
 }
+
