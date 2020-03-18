@@ -7,17 +7,17 @@ function PokedexCard(props) {
   return (
     <div className="pokedex-card">
       <div className="pokedex-card__banner text-is-color--white">
-        <h1>#{pokemon.num}</h1>
-        <h1>{pokemon.name}</h1>
+        <h3>#{pokemon.num}</h3>
+        <h3>{pokemon.name}</h3>
       </div>
 
       <div className="pokedex-card__types">
         <div>
-          <h3>Type(s):</h3>
+          <h5>Type:</h5>
           <PokemonTypeList types={pokemon.type} />
         </div>
         <div>
-          <h3>Weaknesses:</h3>
+          <h5>Weakness:</h5>
           <PokemonTypeList types={pokemon.weaknesses} />
         </div>
       </div>

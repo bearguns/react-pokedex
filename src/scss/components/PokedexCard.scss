@@ -2,27 +2,29 @@
 @import "../colors";
 .pokedex-card {
     width: 300px;
-    height: 180px;
+    height: 200px;
     border: 2px solid $light-gray;
-    border-radius: 28px;
+    border-radius: 3px;
     border-top-width: 0px;
     color: $black;
+    padding-bottom: 8px;
 
     &__banner {
 	display: flex;
 	justify-content: space-between;
-	padding: 0px 8px;
-	border-top-left-radius: 27px;
-	border-top-right-radius: 27px;
+	padding: 4px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	height: 42px;
 	position: relative;
 	top: -3px;
 	width: 100%;
-	background-color: $red;
+	background-color: $black;
     }
     &__types {
 	display: flex;
-	justify-content: space-evenly;
+	flex-direction: column;
+	justify-content: flex-start;
 
 	& .pokemon-type-list .pokemon-type i {
 	    font-size: 1.75rem;

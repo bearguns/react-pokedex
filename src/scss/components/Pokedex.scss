@@ -1,10 +1,12 @@
 .pokedex {
     padding: 27px;
+    padding-bottom: 54px;
     display: grid;
     grid-template-columns: repeat(3,auto);
     grid-auto-rows: 200px;
     overflow: auto;
-    grid-gap: 27px;
+    grid-gap: 54px;
+    margin-bottom: 27px;
     opacity: 0;
 
     animation: .5s ease .5s 1 Fade-in;

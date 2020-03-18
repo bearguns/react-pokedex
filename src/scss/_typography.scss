@@ -19,6 +19,35 @@ h2, h4, h6 {
     font-weight: $font-weight-bold;
 }
 
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+    line-height: 1rem;
+}
 a, p, span, li {
     font-family: $font-family-text;
     font-weight: $font-weight-regular;
