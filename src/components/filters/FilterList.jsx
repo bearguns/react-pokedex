@@ -6,8 +6,7 @@ import { Context } from "../Store.jsx";
 export default function FilterList(props) {
   const { title, filterList } = props;
   const [state, dispatch] = useContext(Context);
-  const { filters } = state;
-  const activeFilterList = filters[filterList];
+  const activeFilterList = state.filters[filterList];
 
   const updateFilters = pokemonType => {
     if (
