@@ -1,7 +1,0 @@
-const pushWeaknessFilter = (weaknesses, type) => {
-    
-}
-
-export const updateFilters = (list, pokemonType) => {
-    
-}
