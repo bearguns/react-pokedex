@@ -7,12 +7,13 @@ export default function FilterList(props) {
   const { title, filterList } = props;
   const [state, dispatch] = useContext(Context);
   const { filters } = state;
+  const activeFilterList = filters[filterList];
 
   const updateFilters = pokemonType => {
     if (
-      filters[filterList] &&
-      filters[filterList].length === 1 &&
-      filters[filterList][0] === pokemonType
+      activeFilterList &&
+      activeFilterList.length === 1 &&
+      activeFilterList[0] === pokemonType
     ) {
       return clearFilters(filterList);
     }
@@ -30,23 +31,23 @@ export default function FilterList(props) {
   const pushFilter = pokemonType => {
     const actionType =
       filterList === "types" ? "SET_TYPE_FILTERS" : "SET_WEAKNESS_FILTERS";
-    if (!filters[filterList]) {
+    if (!activeFilterList) {
       return dispatch({
         type: actionType,
         payload: [pokemonType]
       });
     }
 
-    if (filters[filterList].includes(pokemonType)) {
+    if (activeFilterList.includes(pokemonType)) {
       return dispatch({
         type: actionType,
-        payload: [...filters[filterList].filter(type => type !== pokemonType)]
+        payload: [...activeFilterList.filter(type => type !== pokemonType)]
       });
     }
 
     return dispatch({
       type: actionType,
-      payload: [...filters[filterList], pokemonType]
+      payload: [...activeFilterList, pokemonType]
     });
   };
 
@@ -59,7 +60,7 @@ export default function FilterList(props) {
         {POKEMON_TYPES.map(type => (
           <div
             className={
-              filters[filterList] && !filters[filterList].includes(type)
+              activeFilterList && !activeFilterList.includes(type)
                 ? "filter-list__icon filter-list__icon--inactive"
                 : "filter-list__icon"
             }
