@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import SidebarLogo from "./SidebarLogo.jsx";
-import FilterByType from "./FilterByType.jsx";
-import FilterByWeakness from "./FilterByWeakness.jsx";
+import FilterButton from "../filters/FilterButton.jsx";
+import FilterList from "../filters/FilterList.jsx";
 import SearchBar from "./SearchBar.jsx";
 
-export function Sidebar() {
+export default function Sidebar() {
   const [showFilters, setShowFilters] = useState(false);
   const toggleFilters = () => setShowFilters(!showFilters);
   const { pathname } = useLocation();
@@ -15,16 +15,20 @@ export function Sidebar() {
 
   return (
     <div className="sidebar">
-      <SidebarLogo
-        handleFilterClick={toggleFilters}
-        showFilterButton={pathname === "/"}
-      />
+      <div className="sidebar__logo">
+        <SidebarLogo
+          handleFilterClick={toggleFilters}
+          showFilterButton={pathname === "/"}
+        />
+        <FilterButton handleClick={toggleFilters} />
+      </div>
+
       {pathname === "/" && (
         <React.Fragment>
           <SearchBar />
           <div className={filtersClassName}>
-            <FilterByType />
-            <FilterByWeakness />
+            <FilterList title="type" filterList="types" />
+            <FilterList title="weakness" filterList="weaknesses" />
             <button
               className="sidebar__close-filters"
               onClick={() => toggleFilters()}

@@ -11,7 +11,7 @@
     @media screen and (max-width: $breakpoint-mobile) {
 	position: relative;
 	z-index: 1;
-	height: 128px;
+	height: auto;
 	width: 100%;
 	grid-row: span -1;
 	padding: 15px 0px;
@@ -50,16 +50,8 @@
 	    }
 	}
     }
-}
 
-.sidebar-logo {
-    padding: 0px 15px;
-    animation: 1.25s linear 0s 1 Fade-in;
-    animation-fill-mode: forwards;
-    display: flex;
-    color: $red;
-
-    &__icon {
+        &__icon {
 	i {
 	    font-size: 3rem;
 	    animation: 8s linear 0s infinite App-logo-spin;
@@ -69,6 +61,14 @@
 	    }
 	}
     }
+}
+
+.sidebar__logo {
+    padding: 0px 15px;
+    animation: 1.25s linear 0s 1 Fade-in;
+    animation-fill-mode: forwards;
+    display: flex;
+    color: $red;
 
 }
 

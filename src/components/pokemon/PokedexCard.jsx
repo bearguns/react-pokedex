@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PokemonImage from "./PokemonImage.jsx";
 import PokemonTypeList from "./PokemonTypeList.jsx";
 
 export default function PokedexCard(props) {
@@ -24,7 +25,7 @@ export default function PokedexCard(props) {
             </div>
           </div>
           <div className="pokedex-card__image">
-            <img alt="" src={pokemon.img} height="96" />
+            <PokemonImage alt="" img={pokemon.img} width="96" />
           </div>
         </div>
       </div>

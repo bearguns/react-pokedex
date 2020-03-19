@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Context } from "./Store.jsx";
+import { Context } from "../Store.jsx";
 import PokedexCard from "./PokedexCard.jsx";
 
-export function Pokedex(props) {
+export default function Pokedex(props) {
   const [state] = useContext(Context);
   const { activePokedex, filters } = state;
 

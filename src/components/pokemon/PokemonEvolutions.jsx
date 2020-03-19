@@ -1,23 +1,7 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { Context } from "./Store.jsx";
-import PokemonImage from "./PokemonImage.jsx";
-function PokemonEvolutionList(props) {
-  const { pokemon, pokedex } = props;
+import { Context } from "../Store.jsx";
+import PokemonEvolutionList from "./PokemonEvolutionList.jsx";
 
-  return (
-    <div className="pokemon-evolutions__list">
-      {pokemon.map(pokemon => {
-        let img = pokedex.filter(p => p.num === pokemon.num)[0].img;
-        return (
-          <Link to={pokemon.num}>
-            <PokemonImage img={img} width="64" />
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
 export default function PokemonEvolutions(props) {
   const [state] = useContext(Context);
   const { masterPokedex } = state;

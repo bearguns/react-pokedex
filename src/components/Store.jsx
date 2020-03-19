@@ -45,6 +45,11 @@ const reducer = (state, action) => {
           weaknesses: null
         }
       };
+    case "SET_SEARCH_TERM":
+      return {
+        ...state,
+        searchTerm: action.payload
+      };
     default:
       return state;
   }
@@ -53,6 +58,7 @@ const reducer = (state, action) => {
 const initialState = {
   masterPokedex: [],
   activePokedex: [],
+  searchTerm: "",
   filters: {
     name: "",
     types: null,

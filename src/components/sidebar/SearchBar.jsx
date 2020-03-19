@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import Fuse from "fuse.js";
-
-import { Context } from "./Store.jsx";
+import { Context } from "../Store.jsx";
 
 export default function SearchBar() {
   const [state, dispatch] = useContext(Context);
-  const { masterPokedex } = state;
+  const { masterPokedex, searchTerm } = state;
   const fuse = new Fuse(masterPokedex, {
     shouldSort: true,
     threshold: 0,
@@ -17,24 +16,34 @@ export default function SearchBar() {
 
   const updateSearchTerm = e => {
     const query = e.target.value;
+
     if (!query) {
+      dispatch({
+        type: "SET_SEARCH_TERM",
+        payload: ""
+      });
       return dispatch({
         type: "SET_ACTIVE_POKEDEX",
         payload: [...masterPokedex]
       });
     }
 
-    if (query.length > 2) {
-      const results = fuse.search(query);
+    if (query) {
       dispatch({
-        type: "SET_NAME_FILTER",
+        type: "SET_SEARCH_TERM",
         payload: query
       });
+    }
+
+    if (query.length > 2) {
+      const results = fuse.search(query);
       return dispatch({
         type: "SET_ACTIVE_POKEDEX",
         payload: results.map(result => result.item)
       });
     }
+
+    return undefined;
   };
 
   return (
@@ -44,8 +53,8 @@ export default function SearchBar() {
         name="query"
         onChange={updateSearchTerm}
         placeholder="search by pokemon name"
+        value={searchTerm}
       />
-      ;
     </div>
   );
 }
